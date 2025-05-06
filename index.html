@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<<<<<<< HEAD
-=======
-
->>>>>>> fbec14f (adiciona tela pedido)
 <head>
   <meta charset="UTF-8">
   <title>Sistema da Pizzaria</title>
@@ -14,22 +10,14 @@
 
   <style>
     body {
-<<<<<<< HEAD
-      background: linear-gradient(to bottom, #cce7b6, #2e5939); /* Verde claro → escuro */
-=======
       background: linear-gradient(to bottom, #cce7b6, #2e5939);
       /* Verde claro → escuro */
->>>>>>> fbec14f (adiciona tela pedido)
       font-family: Arial, sans-serif;
     }
 
     .navbar {
-<<<<<<< HEAD
-      background-color: #567d46 !important; /* Verde pântano pastel */
-=======
       background-color: #567d46 !important;
       /* Verde pântano pastel */
->>>>>>> fbec14f (adiciona tela pedido)
     }
 
     .navbar-toggler {
@@ -49,24 +37,6 @@
     }
   </style>
 </head>
-<<<<<<< HEAD
-<body>
-
-  <!-- Barra de navegação -->
-  <include src="/site1/nav.html"></include>
-  
-
-  <!-- Conteúdo principal -->
-  <main class="container">
-    <div class="card mt-4">
-      <div class="card-header bg-success text-white">
-        Consultas
-      </div>
-      <div class="card-body">
-        
-      </div>
-    </div>
-=======
 
 <body>
 
@@ -76,14 +46,11 @@
 
   <!-- Conteúdo principal -->
   <main class="container">
->>>>>>> fbec14f (adiciona tela pedido)
 
     <div class="text-white mt-4">
       <h2>Bem-vindo ao Sistema da Pizzaria</h2>
       <p>Use o menu para navegar entre os cadastros e pedidos.</p>
     </div>
-<<<<<<< HEAD
-=======
 
     <div class="card mt-4">
       <div class="card-header bg-success text-white">
@@ -106,33 +73,21 @@
       </div>
     </div>
 
->>>>>>> fbec14f (adiciona tela pedido)
   </main>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-<<<<<<< HEAD
-      fetch('/site1/nav.html')
-        .then(response => response.text())
-        .then(data => {
-          document.querySelector('include[src="/site1/nav.html"]').outerHTML = data;
-=======
       fetch('./nav.html')
         .then(response => response.text())
         .then(data => {
           document.querySelector('include[src="./nav.html"]').outerHTML = data;
->>>>>>> fbec14f (adiciona tela pedido)
         })
         .catch(error => console.error('Erro ao carregar o nav.html:', error));
     });
   </script>
 
 </body>
-<<<<<<< HEAD
-</html>
-=======
 
 </html>
->>>>>>> fbec14f (adiciona tela pedido)
