@@ -167,10 +167,17 @@ async function listarClientes() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+<<<<<<< HEAD
     fetch('/site1/nav.html')
         .then(response => response.text())
         .then(data => {
             document.querySelector('include[src="/site1/nav.html"]').outerHTML = data;
+=======
+    fetch('/nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('include[src="/nav.html"]').outerHTML = data;
+>>>>>>> fbec14f (adiciona tela pedido)
         })
         .catch(error => console.error('Erro ao carregar o nav.html:', error));
 });

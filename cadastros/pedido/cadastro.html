@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema da Pizzaria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./pedidoController.js"></script>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #cce7b6, #2e5939);
+            /* Verde claro → escuro */
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #567d46 !important;
+            /* Verde pântano pastel */
+        }
+
+        .navbar-toggler {
+            border-color: white;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        main {
+            padding: 80px 20px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de navegação -->
+    <include src="/nav.html"></include>
+
+
+    <!-- Conteúdo principal -->
+    <main class="container">
+
+        <div class="text-white mt-4">
+            <h2>Cadastro de pedidos</h2>
+            <p>Use o menu para navegar entre os cadastros e pedidos.</p>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header bg-success text-white">
+                Consultar cliente
+            </div>
+            <div class="card-body">
+                <form id="formCliente">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome do cliente</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" name="telefone" required>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                        <button type="button" class="btn btn-primary" onclick="consultarCliente()">Consultar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-4" id="cardPedido">
+            <div class="card-header bg-success text-white">
+                Cadastrar Pedido
+            </div>
+            <div class="card-body">
+                <form id="formPedido">
+                    <div class="mb-3">
+                        <label for="codigoCliente" class="form-label">Codigo</label>
+                        <input type="text" class="form-control" id="codigoCliente" name="codigoCliente" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nomeCliente" class="form-label">Nome do cliente</label>
+                        <input type="text" class="form-control" id="nomeCliente" name="nomeCliente" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefoneCliente" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="telefoneCliente" name="telefoneCliente" disabled>
+                    </div>
+            </div>
+            <div class="text-white mt-4 card-body" id="pizzas">
+                <h2 style="color: black; padding-left: 15px;">Lista de Pizzas</h2>
+                <p id="saborPizzas"></p>
+                <div id="tabelaPizzas" class="text-white mt-4"></div>
+            </div>
+            <div class="text-white mt-4 card-body" id="pizzasSelecionadas">
+                <h2 style="color: black; padding-left: 15px;">Lista de pedido</h2>
+                <p id="saborPizzas"></p>
+                <div id="tabelaPizzasSelecionadas" class="text-white mt-4"></div>
+            </div>
+            <div class="mb-3 card-body">
+                <label for="valorTotal" class="form-label">Valor Total</label>
+                <input type="text" class="form-control" id="valorTotal" name="valorTotal" disabled>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('include[src="/nav.html"]').outerHTML = data;
+                })
+                .catch(error => console.error('Erro ao carregar o nav.html:', error));
+        });
+    </script>
+
+</body>
+
+</html>
